@@ -1,16 +1,18 @@
 package ca.gbc.comment.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
+import java.math.BigDecimal;
+
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Getter
 public class CommentRequest {
-    private List<CommentLineItemDto> commentLineItemDtoList =
-            new ArrayList<CommentLineItemDto>();
+    private String name;
+    private String msg;
+
+
 }

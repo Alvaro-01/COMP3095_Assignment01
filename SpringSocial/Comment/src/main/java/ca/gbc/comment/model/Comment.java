@@ -1,26 +1,24 @@
 package ca.gbc.comment.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
+import java.math.BigDecimal;
 
-@Entity
-@Table(name = "t_comment")
-@Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Document(value = "Comment")
 public class Comment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
+    private String name;
+    private String msg;
 
-    private String comment;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade =  CascadeType.ALL)
-    private List<CommentLineItem> orderLineItemList;
 }

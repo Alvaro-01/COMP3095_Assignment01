@@ -1,16 +1,16 @@
 package ca.gbc.post.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Getter
 public class PostRequest {
-    private List<PostLineItemDto> postLineItemDtoList =
-            new ArrayList<PostLineItemDto>();
+    private String name;
+    private String msg;
+
+
 }

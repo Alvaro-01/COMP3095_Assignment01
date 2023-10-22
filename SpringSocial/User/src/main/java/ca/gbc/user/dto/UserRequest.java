@@ -1,16 +1,16 @@
 package ca.gbc.user.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Getter
 public class UserRequest {
-    private List<UserLineItemDto> UserLineItemDtoList =
-            new ArrayList<UserLineItemDto>();
+    private String name;
+    private String msg;
+
+
 }

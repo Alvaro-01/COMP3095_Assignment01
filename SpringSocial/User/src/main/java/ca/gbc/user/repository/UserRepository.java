@@ -1,8 +1,12 @@
 package ca.gbc.user.repository;
 
 
-import ca.gbc.user.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+import ca.gbc.user.model.User;
+import org.springframework.data.mongodb.repository.DeleteQuery;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface UserRepository extends MongoRepository<User, String> {
+    @DeleteQuery
+    void deleteById(String productId);
 }

@@ -1,26 +1,22 @@
 package ca.gbc.post.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
-@Entity
-@Table(name = "t_post")
-@Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Document(value = "Post")
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
+    private String name;
+    private String msg;
 
-    private String postMessage;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade =  CascadeType.ALL)
-    private List<PostLineItem> postLineItemList;
 }
